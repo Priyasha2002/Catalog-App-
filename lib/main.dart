@@ -3,6 +3,7 @@ import 'package:shopping/pages/home_page.dart';
 import 'package:shopping/pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shopping/utils/routes.dart';
+import 'package:shopping/widgets/themes.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,15 +16,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(
-          primarySwatch: Colors.indigo,
-              fontFamily: GoogleFonts.roboto().fontFamily,
-      ),
+      theme:MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
      debugShowCheckedModeBanner: false,
 
      routes: {
        "/": (context) => LoginPage(),
-        MyRoutes.homeRoute: (context) => HomePage(),
+       MyRoutes.homeRoute: (context) => HomePage(),
        MyRoutes.loginRoute: (context) => LoginPage()
 
      },

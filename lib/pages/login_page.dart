@@ -26,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+        color: Colors.white,
       child:SingleChildScrollView(
       child: Form(
         key: _formKey,
@@ -50,7 +50,9 @@ class _LoginPageState extends State<LoginPage> {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your username';
                       }
-                      return null;
+                else if (value.length < 6) {return 'Password length should be atleast 6';
+                        return null;
+                      }
                     },
                     decoration: InputDecoration(
                       hintText: "Enter User Name",
